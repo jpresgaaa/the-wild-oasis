@@ -21,3 +21,10 @@ export interface NewCabin {
   image: string;
   description: string;
 }
+
+export interface FormRowProps {
+  label?: string; // Specific values
+  error?: string;
+  children: React.ReactNode;
+  htmlFor?: string;
+}
