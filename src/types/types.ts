@@ -1,12 +1,6 @@
-export interface Cabin {
+export interface Cabin extends NewCabin {
   createdAt: string;
-  description: string;
-  discount: number;
   id: number;
-  image?: string;
-  maxCapacity: number;
-  name: string;
-  regularPrice: number;
 }
 
 export interface CabinRowProps {
@@ -18,7 +12,7 @@ export interface NewCabin {
   maxCapacity: number;
   regularPrice: number;
   discount: number;
-  image: string;
+  image?: any;
   description: string;
 }
 
@@ -26,5 +20,9 @@ export interface FormRowProps {
   label?: string; // Specific values
   error?: string;
   children: React.ReactNode;
-  htmlFor?: string;
+  id?: string;
+}
+
+export interface CreateCabinFormProps {
+  cabinToEdit?: Cabin;
 }
