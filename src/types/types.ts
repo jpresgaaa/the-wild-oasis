@@ -17,7 +17,7 @@ export interface NewCabin {
 }
 
 export interface FormRowProps {
-  label?: string; // Specific values
+  label?: string;
   error?: string;
   children: React.ReactNode;
   id?: string;
