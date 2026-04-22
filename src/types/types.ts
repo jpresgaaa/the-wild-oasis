@@ -26,3 +26,15 @@ export interface FormRowProps {
 export interface CreateCabinFormProps {
   cabinToEdit?: Cabin;
 }
+
+export interface NewSettings {
+  minBookingLength: number;
+  maxBookingLength: number;
+  maxGuestsPerBooking: number;
+  breakfastPrice: number;
+}
+
+export interface Settings extends NewSettings {
+  createdAt: string;
+  id: number;
+}
