@@ -11,7 +11,7 @@ import type { CreateCabinFormProps, NewCabin } from "../../types/types";
 import { useCreateCabin } from "./useCreateCabin";
 import { useEditCabin } from "./useEditCabin";
 
-function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
+function CreateCabinForm({ cabinToEdit, onCloseModal }: CreateCabinFormProps) {
   const { id: editId, ...editValues } = cabinToEdit || {};
   const isEditSession = Boolean(editId);
 
@@ -31,6 +31,7 @@ function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
         {
           onSuccess: () => {
             reset();
+            onCloseModal?.((show) => !show);
           },
         },
       );
@@ -40,6 +41,7 @@ function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
         {
           onSuccess: () => {
             reset();
+            onCloseModal?.((show) => !show);
           },
         },
       );
@@ -51,7 +53,10 @@ function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
 
   const isWorking = isCreating || isEditing;
   return (
-    <Form onSubmit={handleSubmit(onSubmit, onError)}>
+    <Form
+      onSubmit={handleSubmit(onSubmit, onError)}
+      $type={onCloseModal ? "modal" : "regular"}
+    >
       <FormRow label="Cabin name" id="name" error={errors?.name?.message}>
         <Input
           type="text"
@@ -141,7 +146,12 @@ function CreateCabinForm({ cabinToEdit }: CreateCabinFormProps) {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button $variation="secondary" type="reset" disabled={isWorking}>
+        <Button
+          $variation="secondary"
+          type="reset"
+          disabled={isWorking}
+          onClick={() => onCloseModal?.((show) => !show)}
+        >
           Cancel
         </Button>
         <Button disabled={isWorking}>

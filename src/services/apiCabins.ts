@@ -1,4 +1,4 @@
-import type { Cabin, NewCabin } from "../types/types";
+import type { NewCabin } from "../types/types";
 import supabase, { supabaseUrl } from "./supabase";
 
 export async function getCabins() {

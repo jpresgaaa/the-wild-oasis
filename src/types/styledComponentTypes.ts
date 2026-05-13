@@ -1,5 +1,3 @@
-import type React from "react";
-
 export interface RowProps {
   $type?: "horizontal" | "vertical"; // Specific values
 }
@@ -10,5 +8,16 @@ export interface ButtonProps {
 }
 
 export interface StyleFormProps {
-  $type?: "modal" | "vertical"; // Specific values
+  $type?: "modal" | "vertical" | "regular"; // Specific values
+}
+
+export interface CommonRowProps {
+  $columns: "1fr";
+}
+
+export interface StyledListProps {
+  $position: { x: number; y: number };
+}
+export interface FilterButtonProps {
+  $active: boolean;
 }

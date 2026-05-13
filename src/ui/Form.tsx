@@ -2,8 +2,8 @@ import styled, { css } from "styled-components";
 import type { StyleFormProps } from "../types/styledComponentTypes";
 
 const Form = styled.form<StyleFormProps>`
-  ${({ $type = "modal" }) =>
-    $type !== "modal" &&
+  ${({ $type = "regular" }) =>
+    $type === "regular" &&
     css`
       padding: 2.4rem 4rem;
 
