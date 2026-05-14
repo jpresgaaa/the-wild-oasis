@@ -70,9 +70,9 @@ export interface TableProps {
   columns: string;
 }
 
-export interface TableBodyProps {
-  data: Cabin[] | undefined;
-  render: (cabin: Cabin) => React.ReactNode;
+export interface TableBodyProps<T> {
+  data: T[] | undefined;
+  render: (item: T) => React.ReactNode;
 }
 
 export interface MenusProps {
@@ -90,4 +90,56 @@ export interface MenuButtonProps {
   children: React.ReactNode;
   icon: React.ReactNode;
   onClick?: () => void;
+}
+export interface FilterProps {
+  filterField: string;
+  options: FilterValue[];
+}
+
+interface FilterValue {
+  value: string;
+  label: string;
+}
+interface SortValue extends FilterValue {}
+
+export interface SortByProps {
+  options: SortValue[];
+}
+export interface SelectProps {
+  options: SortValue[];
+  value?: string;
+  type?: "white" | "grey";
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+export interface Guests {
+  fullName: string;
+  email: string;
+}
+
+export interface NewBooking {
+  startDate: string;
+  endDate: string;
+  numNights: number;
+  cabinId: number;
+  guestsId: number;
+  numGuests: number;
+  cabinPrice: number;
+  extrasPrice: number;
+  totalPrice: number;
+  status: "unconfirmed" | "checked-in" | "checked-out";
+  hasBreakfast: boolean;
+  isPaid: boolean;
+  observations: string;
+}
+
+export interface Booking extends NewBooking {
+  created_at: string;
+  id: number;
+  guests: Guests;
+  cabins: { name: string };
+}
+
+export interface BookingRowProps {
+  booking: Booking;
 }

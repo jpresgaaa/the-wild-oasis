@@ -91,7 +91,7 @@ function Row({ children }: any) {
   );
 }
 
-function Body({ data, render }: TableBodyProps) {
+function Body<T>({ data, render }: TableBodyProps<T>) {
   if (!data?.length) return <Empty>No data found</Empty>;
   return <StyledBody>{data?.map(render)}</StyledBody>;
 }

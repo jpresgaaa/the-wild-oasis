@@ -19,5 +19,11 @@ export interface StyledListProps {
   $position: { x: number; y: number };
 }
 export interface FilterButtonProps {
-  $active: boolean;
+  $active?: boolean;
+}
+export interface StyledSelectprops {
+  $type?: "white" | "grey";
+}
+export interface TagProps {
+  $type?: any;
 }
