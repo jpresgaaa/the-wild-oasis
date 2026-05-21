@@ -27,3 +27,7 @@ export interface StyledSelectprops {
 export interface TagProps {
   $type?: any;
 }
+
+export interface PaginationButtonProps {
+  active?: boolean;
+}

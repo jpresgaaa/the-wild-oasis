@@ -143,3 +143,12 @@ export interface Booking extends NewBooking {
 export interface BookingRowProps {
   booking: Booking;
 }
+export interface PaginationProps {
+  count: number;
+}
+
+export interface GetBookingsParams {
+  filter?: { field: string; value: string; method?: string } | null;
+  sortBy?: { field: string; direction: string };
+  page?: number;
+}
