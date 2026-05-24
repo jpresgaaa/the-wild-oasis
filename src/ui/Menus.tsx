@@ -96,7 +96,6 @@ function Toggle({ id }: ToggleProps) {
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
     const target = e.target as Element;
     const rect = target.getBoundingClientRect();
-    console.log(rect);
     setPosition({
       x: window.innerWidth - rect.width - rect.x,
       y: rect.y + rect.height + 8,

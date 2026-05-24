@@ -115,6 +115,9 @@ export interface SelectProps {
 export interface Guests {
   fullName: string;
   email: string;
+  country: string;
+  countryFlag: string;
+  nationalID: string;
 }
 
 export interface NewBooking {
@@ -151,4 +154,18 @@ export interface GetBookingsParams {
   filter?: { field: string; value: string; method?: string } | null;
   sortBy?: { field: string; direction: string };
   page?: number;
+}
+
+export interface DataItemProps {
+  icon: React.ReactNode;
+  label: string;
+  children: React.ReactNode;
+}
+
+export interface CheckboxProps {
+  checked: boolean;
+  onChange: () => void;
+  disabled?: boolean;
+  id: string;
+  children: React.ReactNode;
 }

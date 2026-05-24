@@ -31,3 +31,7 @@ export interface TagProps {
 export interface PaginationButtonProps {
   active?: boolean;
 }
+
+export interface StyledPriceProps {
+  $isPaid: boolean;
+}
