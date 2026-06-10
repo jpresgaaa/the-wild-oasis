@@ -90,6 +90,7 @@ export interface MenuButtonProps {
   children: React.ReactNode;
   icon: React.ReactNode;
   onClick?: () => void;
+  disabled?: boolean;
 }
 export interface FilterProps {
   filterField: string;
@@ -168,4 +169,36 @@ export interface CheckboxProps {
   disabled?: boolean;
   id: string;
   children: React.ReactNode;
+}
+
+export interface BreakFast {
+  hasBreakfast: boolean;
+  extrasPrice: number;
+  totalPrice: number;
+}
+
+export interface ChildProps {
+  id: string;
+}
+export interface FormRowVerticalProps {
+  label?: string;
+  error?: string;
+  children: React.ReactElement<ChildProps>;
+}
+
+export interface UserAuthentication {
+  email: string;
+  password: string;
+}
+
+export interface NewUser {
+  fullName: string;
+  email: string;
+  password: string;
+}
+
+export interface UpdatedUser {
+  fullName?: string;
+  password?: string;
+  avatar?: File | null;
 }
