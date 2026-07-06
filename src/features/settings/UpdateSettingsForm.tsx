@@ -8,7 +8,7 @@ import type React from "react";
 import type { NewSettings } from "../../types/types";
 
 function UpdateSettingsForm() {
-  const { settings = {}, isLoading } = useSettings();
+  const { settings = {}, isPending } = useSettings();
 
   const {
     minBookingLength,
@@ -19,7 +19,7 @@ function UpdateSettingsForm() {
 
   const { isUpdating, updateSetting } = useUpdateSetting();
 
-  if (isLoading) return <Spinner />;
+  if (isPending) return <Spinner />;
 
   function handleUpdate(
     e: React.FocusEvent<HTMLInputElement>,

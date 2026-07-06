@@ -202,3 +202,45 @@ export interface UpdatedUser {
   password?: string;
   avatar?: File | null;
 }
+
+export interface DarkModeContextType {
+  isDarkMode: boolean;
+  setIsDarkMode?: React.Dispatch<React.SetStateAction<boolean>>;
+  toggleDarkMode: () => void;
+}
+
+export interface SalesChartProps {
+  bookings: any;
+  numDays: number;
+}
+
+export interface StatsProps {
+  bookings: any;
+  confirmedStays: any;
+  numDays: number;
+  cabinCount?: number;
+}
+
+export interface StatProps {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+  color: string;
+}
+
+export interface DurationChartProps {
+  confirmedStays: any;
+}
+
+export interface TodayItemProps {
+  activity: any;
+}
+
+export interface CheckoutButtonProps {
+  bookingId: number;
+}
+
+export interface ErrorFallbackProps {
+  error?: any;
+  resetErrorBoundary: () => void;
+}

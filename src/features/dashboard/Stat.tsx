@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import type { StatProps } from "../../types/types";
 
 const StyledStat = styled.div`
   /* Box */
@@ -47,7 +48,7 @@ const Value = styled.p`
   font-weight: 500;
 `;
 
-function Stat({ icon, title, value, color }) {
+function Stat({ icon, title, value, color }: StatProps) {
   return (
     <StyledStat>
       <Icon color={color}>{icon}</Icon>

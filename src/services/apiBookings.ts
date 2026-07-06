@@ -1,4 +1,3 @@
-import { da } from "date-fns/locale";
 import { getToday } from "../utils/helpers";
 import supabase from "./supabase";
 import type { GetBookingsParams } from "../types/types";

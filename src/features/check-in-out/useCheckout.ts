@@ -1,12 +1,10 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updateBooking } from "../../services/apiBookings";
 import toast from "react-hot-toast";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function useCheckout() {
   const queryClient = useQueryClient();
-
-  const [searchParams] = useSearchParams();
 
   const navigate = useNavigate();
   const { mutate: checkout, isPending: isCheckingOut } = useMutation({

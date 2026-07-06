@@ -1,17 +1,16 @@
 import { createContext, useContext, useEffect } from "react";
 import { useLocalStorageState } from "../hooks/useLocalStorageState";
+import type { DarkModeContextType } from "../types/types";
 
-const DarkModeContext = createContext<
-  | {
-      isDarkMode: boolean;
-      setIsDarkMode?: React.Dispatch<React.SetStateAction<boolean>>;
-      toggleDarkMode: () => void;
-    }
-  | undefined
->(undefined);
+const DarkModeContext = createContext<DarkModeContextType | undefined>(
+  undefined,
+);
 
 function DarkModeProvider({ children }: { children: React.ReactNode }) {
-  const [isDarkMode, setIsDarkMode] = useLocalStorageState(false, "isDarkMode");
+  const [isDarkMode, setIsDarkMode] = useLocalStorageState(
+    window.matchMedia("prefers-color-scheme: dark").matches,
+    "isDarkMode",
+  );
 
   useEffect(
     function () {

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import type { FormRowProps } from "../types/types";
-import React from "react";
 
 const StyledFormRow = styled.div`
   display: grid;
